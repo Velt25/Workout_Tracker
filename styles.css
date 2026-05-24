@@ -1,0 +1,78 @@
+:root{
+  --accent:#0b7285;
+  --bg:#eef4f6; /* softer page background */
+  --card:#f3f7f9; /* card background */
+  --muted:#274046; /* primary text */
+  --muted-soft:#5a6b70; /* secondary text */
+  --edge:#e4edf2; /* subtle borders */
+}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;line-height:1.4;background:var(--bg);color:var(--muted);margin:0;padding:0}
+header{background:linear-gradient(180deg,#0b5968,#0b7285);color:#fff;padding:18px 20px;display:flex;justify-content:space-between;align-items:center}
+main{padding:0;margin:0}
+h1,h2{margin:0 0 8px 0}
+form input{padding:8px;margin-right:8px}
+button{padding:6px 10px;margin-left:6px}
+ul{list-style:none;padding:0}
+.card{background:var(--card);margin:8px 0;padding:10px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 6px rgba(20,35,42,0.06);border:1px solid var(--edge)}
+.hidden{display:none}
+#timer{font-size:2rem;margin:12px 0}
+.controls button{margin-right:8px}
+
+#categoryTabs{margin:8px 0}
+.catBtn{background:#fff;border:1px solid #ddd;padding:6px 10px;margin-right:6px;border-radius:6px}
+.catBtn:hover{background:#f0fbff}
+
+/* Minimal two-column layout */
+.minimal{display:flex;gap:16px;padding:18px}
+.leftCol{width:320px}
+.rightCol{flex:1;padding-left:12px}
+.inline select, .inline input{padding:8px;margin-right:6px}
+.tabs{margin:10px 0}
+.compactList{list-style:none;padding:0;margin:0}
+.compactList li{background:#fff;border-radius:6px;padding:10px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+.sessionHeader{display:flex;justify-content:space-between;align-items:center}
+.timersRow{display:flex;gap:16px;align-items:center;margin:12px 0}
+.exControls{display:flex;gap:8px;margin-bottom:8px}
+.simplePanel{background:#fff;padding:10px;border-radius:8px}
+#setsTable{width:100%;border-collapse:collapse;margin-bottom:8px}
+#setsTable th,#setsTable td{padding:6px;border-bottom:1px solid #eee;text-align:left}
+.addSet input{margin-right:8px;padding:6px}
+.chartWrap{height:220px}
+#progressChart{width:100%;height:100%}
+
+@media(max-width:900px){
+  .minimal{flex-direction:column}
+  .leftCol{width:100%}
+}
+
+/* simple category & exercise styles */
+.categoryBar{display:flex;gap:8px;margin-bottom:12px}
+.catBtn{padding:8px 12px;border-radius:8px;border:1px solid var(--edge);background:transparent;color:var(--muted-soft)}
+.catBtn.active{background:var(--accent);color:#fff;border-color:transparent;box-shadow:0 2px 8px rgba(11,114,133,0.12)}
+.exerciseRow{display:flex;justify-content:space-between;align-items:center;background:#fff;padding:10px;border-radius:6px;margin-bottom:8px}
+.exerciseRow{display:flex;justify-content:space-between;align-items:center;background:var(--card);padding:10px;border-radius:8px;margin-bottom:8px;border:1px solid var(--edge);box-shadow:0 1px 4px rgba(20,35,42,0.04)}
+.exerciseRow .exName{font-weight:700;color:var(--muted)}
+.exInputs input{width:90px;padding:8px;margin-right:8px;border:1px solid var(--edge);border-radius:6px;background:#fff;color:var(--muted)}
+.exInputs button{padding:6px 10px;border-radius:6px;background:transparent;border:1px solid var(--edge);color:var(--muted-soft)}
+
+.smallDel{margin-left:8px;padding:6px 8px;border-radius:8px;background:transparent;border:1px solid var(--edge);color:var(--muted-soft)}
+.smallDel:hover{background:#fff}
+.catWrap{display:inline-flex;align-items:center;gap:8px;margin-right:6px}
+.restControls input{width:70px}
+.restControls button{padding:6px 8px;border-radius:6px;border:1px solid var(--edge);background:transparent;color:var(--muted-soft)}
+.restControls button:hover{background:#fff}
+.restTimer .timersRow{align-items:center}
+
+/* Tabs and panels */
+.tabsBar{display:flex;gap:8px;margin:12px 0}
+.tabBtn{padding:8px 12px;border-radius:8px;border:1px solid var(--edge);background:transparent;color:var(--muted-soft)}
+.tabBtn.active{background:var(--accent);color:#fff;border-color:transparent;box-shadow:0 2px 8px rgba(11,114,133,0.12)}
+.panels{position:relative;overflow:hidden}
+.tabPanel{display:none;padding-top:8px}
+.tabPanel.active{display:block}
+
+/* Drag & drop visual */
+.exerciseRow.drag-over{outline:2px dashed rgba(11,114,133,0.25)}
+.exerciseRow.dragging{opacity:0.5}
+.addExerciseRow{display:flex;gap:8px;margin-bottom:8px}
+.smallForm input{padding:6px;margin-right:6px}

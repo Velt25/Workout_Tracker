@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-23" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b7285" />
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <title>Workout Tracker PWA</title>
+</head>
+<body>
+  <header>
+    <h1>Workout Tracker</h1>
+    <button id="exportBtn">Export Data</button>
+  </header>
+
+  <main>
+    <section id="categories">
+      <h2>Categories</h2>
+      <div class="categoryBar" id="categoryBar"></div>
+      <form id="addCategoryForm" class="smallForm">
+        <input id="newCategoryName" placeholder="New category (e.g., Full)" />
+        <button id="addCategoryBtn" type="button">Add Category</button>
+      </form>
+    </section>
+
+    <section id="exercises">
+      <h2 id="exTitle">Dumbbell Exercises — <span id="currentCat">Push</span></h2>
+      <div class="addExerciseRow">
+        <input id="newExerciseName" placeholder="Add exercise to category" />
+        <button id="addNewExerciseBtn" type="button">Add Exercise</button>
+      </div>
+      <div id="exerciseList"></div>
+    </section>
+
+    <div class="tabsContainer">
+      <div class="tabsBar" id="tabsBar">
+        <button class="tabBtn active" data-tab="chart">Chart</button>
+        <button class="tabBtn" data-tab="rest">Rest</button>
+      </div>
+
+      <div id="panels" class="panels" style="touch-action:pan-y">
+        <section id="chartPanel" class="tabPanel">
+          <h2>Progress Chart</h2>
+          <div class="chartWrap simplePanel">
+            <canvas id="progressChart"></canvas>
+            <div id="chartNotice" style="margin-top:8px;color:#5a6b70;font-size:0.95rem"></div>
+            <div style="margin-top:8px">
+              <button id="clearChartBtn" type="button" class="smallDel">Clear Chart History</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="restPanel" class="tabPanel">
+          <h2>Rest Timer</h2>
+          <div class="chartWrap simplePanel">
+            <div class="timersRow">
+              <div id="restTimerDisplay" style="font-size:1.6rem;font-weight:700;min-width:90px">01:00</div>
+              <div class="restControls" style="display:flex;gap:8px;align-items:center">
+                <label style="font-size:0.9rem;color:#5a6b70">Minutes</label>
+                <input id="restMinutes" type="number" min="0" value="1" class="smallForm" style="width:70px;padding:6px;border-radius:6px;border:1px solid var(--edge)">
+                <label style="font-size:0.9rem;color:#5a6b70">Seconds</label>
+                <input id="restSeconds" type="number" min="0" max="59" value="0" class="smallForm" style="width:70px;padding:6px;border-radius:6px;border:1px solid var(--edge)">
+                <button id="setRestBtn" type="button">Set</button>
+                <button id="restStartBtn" type="button">Start</button>
+                <button id="restPauseBtn" type="button">Pause</button>
+                <button id="restResetBtn" type="button">Reset</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- History removed by user request -->
+  </main>
+
+  <script type="module" src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
+
