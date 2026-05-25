@@ -350,7 +350,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
     const devHosts = ['localhost', '127.0.0.1'];
     const isDev = devHosts.includes(location.hostname) || location.protocol === 'file:';
     if (!isDev) {
-      navigator.serviceWorker.register('/service-worker.js').then(reg => {
+      navigator.serviceWorker.register('./service-worker.js').then(reg => {
         console.log('Service worker registered:', reg.scope);
       }).catch(err => console.warn('SW registration failed:', err));
     } else {

@@ -1,7 +1,8 @@
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 const CACHE_NAME = `workout-pwa-${CACHE_VERSION}`;
 const FILES_TO_CACHE = [
-  './', 'index.html', 'styles.css', 'app.js', 'manifest.json'
+  './', 'index.html', 'styles.css', 'app.js', 'manifest.json',
+  'icon.svg', 'icon-192.png', 'icon-512.png'
 ];
 
 self.addEventListener('install', (e) => {
